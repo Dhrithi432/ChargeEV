@@ -32,8 +32,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     TypographyComponent,
     IconsComponent,
     MapsComponent,
-    NotificationsComponent,
-  ]
+    NotificationsComponent
+    ]
 })
 
 export class AdminLayoutModule {}

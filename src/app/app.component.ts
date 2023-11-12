@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { ZipCodeSearchComponent } from './zip-code-search/zip-code-search.component';
 
 
 @Component({
