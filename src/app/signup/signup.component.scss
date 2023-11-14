@@ -1,22 +1,22 @@
 .card {
     border: none;
     max-width: 500px; /* Maximum width, but can be smaller on smaller screens */
-    width: 100%; /* Makes the width responsive to the screen size */
+    width: 500px; /* Makes the width responsive to the screen size */
     padding: 2rem; /* 40px equivalent, but more consistent with rem units */
     
         position: absolute;
-        top: 30%; /* Move down by 10% from the center */
-        left: 20%; /* Center horizontally */
-        right: 60%;
+        top: 50%; /* Move down by 10% from the center */
+        left: 105%; /* Center horizontally */
+       
         
-        transform: translate(50%, 50%); /* Adjust for the element's own dimensions */
+        transform: translate(-60%, 30%); /* Adjust for the element's own dimensions */
         /* ... other properties ... */
       
       
    
-    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+        background: linear-gradient(90deg, rgb(96, 4, 4) 0%, rgb(167, 3, 3) 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
-    border-radius: 8px; /* Optional: Rounds the corners of the card */
+    border-radius: 8px; /* Optisonal: Rounds the corners of the card */
     box-sizing: border-box; /* Ensures padding is included in width calculation */
 }
 .card h1,

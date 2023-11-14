@@ -14,6 +14,9 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { StationsComponent } from './stations/stations.component';
+import { VendorComponent } from './vendor/vendor.component';
+
 
 @NgModule({
   imports: [
@@ -31,7 +34,10 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    StationsComponent,
+    VendorComponent,
+   
 
   ],
   providers: [],

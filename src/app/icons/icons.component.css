@@ -1,0 +1,51 @@
+/* This is a general approach and may need to be adjusted based on your existing HTML and CSS structure. */
+
+.main-content {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    min-height: 100vh; /* Sets the minimum height to full viewport height */
+    padding: 1rem; /* Added padding to ensure some space around the .card */
+}
+
+.card {
+    max-width: 90%; /* Allows the card to have a max-width of 90% of the viewport width */
+    margin: auto; /* Ensures margin is auto on all sides, works with flexbox centering */
+    padding: 2rem; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    border-radius: 8px; /* Rounds the corners of the card */
+    background-color: #fff; /* Sets a background color for the card */
+    overflow-x: auto; /* Ensures horizontal scroll if the table overflows */
+    /* ... other properties ... */
+}
+
+.table {
+    width: 100%; /* Full width of the card */
+    max-width: 100%; /* Ensures the table does not exceed the card */
+    border-collapse: collapse; /* Collapses cell borders */
+    table-layout: fixed; /* Fixes table layout to avoid overflow */
+}
+
+.table thead th {
+    background-color: #f2f2f2; /* Light grey background for the header */
+    padding: 10px; /* Padding inside header cells */
+    word-break: break-word; /* Prevents long words from overflowing */
+}
+
+.table tbody td {
+    padding: 10px; /* Padding inside body cells */
+    border-bottom: 1px solid #e1e1e1; /* Light grey border for each row */
+    word-break: break-word; /* Prevents long words from overflowing */
+}
+
+/* Responsive table styling */
+@media screen and (max-width: 768px) {
+    .card {
+        padding: 1rem; /* Reduces padding inside the card on smaller screens */
+        overflow-x: auto; /* Allows for horizontal scrolling on small devices */
+    }
+
+    .table {
+        /* Adjustments for table on smaller screens can be made here */
+    }
+}

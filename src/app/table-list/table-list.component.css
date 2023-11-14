@@ -1,0 +1,108 @@
+/* Styles for the form */
+form {
+    max-width: 500px; /* Adjust this value to suit your layout needs */
+    margin: 0 auto; /* Center the form in its container */
+    margin-bottom: 20px; /* Space below the form, before the table */
+  }
+  
+  /* Style each form group to align items in a row */
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px; /* Space between form groups */
+  }
+  
+  /* Style individual form fields to take up the available space */
+  .form-group > label {
+    margin-right: 10px; /* Space between label and input */
+  }
+  
+  .form-group > input {
+    flex-grow: 1; /* Allow input to fill the space */
+  }
+  
+  /* Specifically target the group that should appear on a single line */
+  .form-group-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-group-row > div {
+    flex-basis: calc(50% - 5px); /* Assign half the width to each input, adjust the 5px if needed */
+    display: flex;
+  }/* Style for buttons inside the table cell */
+.table-responsive td button {
+    margin-right: 10px; /* Adds space to the right of the first button */
+}
+
+/* Remove margin from the right of the last button to avoid extra spacing */
+.table-responsive td button:last-child {
+    margin-right: 0;
+}
+
+/* General button styling, if needed */
+button {
+    padding: 8px 12px; /* Adjust padding as needed */
+    margin-bottom: 10px; /* Space below the button */
+    border: 1px solid #ccc; /* Border color can be adjusted */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Mouse cursor on hover */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+  
+  /* Additional styling for input fields */
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Update button style */
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Adjust the font size as needed */
+    margin-top: 20px; /* Space above the 'Add Station' button */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    left: 10%;
+  }
+  
+  /* Responsive layout for smaller screens */
+  @media (max-width: 768px) {
+    .form-group-row {
+      flex-direction: column;
+    }
+  
+    .form-group-row > div {
+      flex-basis: 100%;
+    }
+  
+    .form-group-row > div:not(:last-child) {
+      margin-bottom: 15px; /* Space between vertically stacked inputs */
+    }
+  }
+  
+  /* Leave the table layout to be full-width */
+  .table-responsive {
+    /* No max-width here, so it will take the full width of its container */
+    margin: 0 auto; /* Center the table if needed */
+  }
+  
+  /* Add additional global styles as needed */
+  
