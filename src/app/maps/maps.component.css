@@ -1,0 +1,16 @@
+.container-fluid, .row, .col-md-3, .col-md-9 {
+    height: 100%;
+  }
+  
+  #map {
+    width: 100%;
+    
+  }
+  
+  .list-group-item {
+    cursor: pointer;
+    &:hover {
+      background-color: #f8f9fa;
+    }
+  }
+  

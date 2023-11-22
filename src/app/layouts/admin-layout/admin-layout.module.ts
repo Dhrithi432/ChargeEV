@@ -14,25 +14,27 @@ import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { ComponentsModule } from "../../components/components.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AdminLayoutRoutes),
-    FormsModule,
-    ChartsModule,
-    NgbModule,
-    ToastrModule.forRoot()
-  ],
-  declarations: [
-    DashboardComponent,
-    UserProfileComponent,
-    TableListComponent,
-    UpgradeComponent,
-    TypographyComponent,
-    IconsComponent,
-    MapsComponent,
-    NotificationsComponent
+    declarations: [
+        DashboardComponent,
+        UserProfileComponent,
+        TableListComponent,
+        UpgradeComponent,
+        TypographyComponent,
+        IconsComponent,
+        MapsComponent,
+        NotificationsComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AdminLayoutRoutes),
+        FormsModule,
+        ChartsModule,
+        NgbModule,
+        ToastrModule.forRoot(),
+        ComponentsModule
     ]
 })
 

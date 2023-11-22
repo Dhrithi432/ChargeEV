@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ZipCodeSearchComponent } from './zip-code-search/zip-code-search.component';
+import { LandingComponent } from './landing/landing.component';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -32,6 +35,8 @@ import { ZipCodeSearchComponent } from './zip-code-search/zip-code-search.compon
     AppComponent,
     AdminLayoutComponent,
     ZipCodeSearchComponent,
+    LandingComponent,
+    LoginComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
