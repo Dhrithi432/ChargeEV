@@ -1,0 +1,271 @@
+{
+    "database": "ev_station_db",
+    "collections": [
+      {
+        "name": "ev_stations",
+        "fields": [
+          {
+            "name": "Fuel_Type_Code",
+            "type": "string"
+          },
+          {
+            "name": "Station_Name",
+            "type": "string"
+          },
+          {
+            "name": "Street_Address",
+            "type": "string"
+          },
+          {
+            "name": "Intersection_Directions",
+            "type": "string"
+          },
+          {
+            "name": "City",
+            "type": "string"
+          },
+          {
+            "name": "State",
+            "type": "string"
+          },
+          {
+            "name": "ZIP",
+            "type": "string"
+          },
+          {
+            "name": "Plus4",
+            "type": "string"
+          },
+          {
+            "name": "Station_Phone",
+            "type": "string"
+          },
+          {
+            "name": "Status_Code",
+            "type": "string"
+          },
+          {
+            "name": "Expected_Date",
+            "type": "date"
+          },
+          {
+            "name": "Groups_With_Access_Code",
+            "type": "string"
+          },
+          {
+            "name": "Access_Days_Time",
+            "type": "string"
+          },
+          {
+            "name": "Cards_Accepted",
+            "type": "string"
+          },
+          {
+            "name": "BD_Blends",
+            "type": "string"
+          },
+          {
+            "name": "NG_Fill_Type_Code",
+            "type": "string"
+          },
+          {
+            "name": "NG_PSI",
+            "type": "string"
+          },
+          {
+            "name": "EV_Level1_EVSE_Num",
+            "type": "int"
+          },
+          {
+            "name": "EV_Level2_EVSE_Num",
+            "type": "int"
+          },
+          {
+            "name": "EV_DC_Fast_Count",
+            "type": "int"
+          },
+          {
+            "name": "EV_Other_Info",
+            "type": "string"
+          },
+          {
+            "name": "EV_Network",
+            "type": "string"
+          },
+          {
+            "name": "EV_Network_Web",
+            "type": "string"
+          },
+          {
+            "name": "Geocode_Status",
+            "type": "string"
+          },
+          {
+            "name": "Latitude",
+            "type": "double"
+          },
+          {
+            "name": "Longitude",
+            "type": "double"
+          },
+          {
+            "name": "Date_Last_Confirmed",
+            "type": "date"
+          },
+          {
+            "name": "ID",
+            "type": "int"
+          },
+          {
+            "name": "Updated_At",
+            "type": "date"
+          },
+          {
+            "name": "Owner_Type_Code",
+            "type": "string"
+          },
+          {
+            "name": "Federal_Agency_ID",
+            "type": "string"
+          },
+          {
+            "name": "Federal_Agency_Name",
+            "type": "string"
+          },
+          {
+            "name": "Open_Date",
+            "type": "date"
+          },
+          {
+            "name": "Hydrogen_Status_Link",
+            "type": "string"
+          },
+          {
+            "name": "NG_Vehicle_Class",
+            "type": "string"
+          },
+          {
+            "name": "LPG_Primary",
+            "type": "string"
+          },
+          {
+            "name": "E85_Blender_Pump",
+            "type": "string"
+          },
+          {
+            "name": "EV_Connector_Types",
+            "type": "string"
+          },
+          {
+            "name": "Country",
+            "type": "string"
+          },
+          {
+            "name": "Intersection_Directions_French",
+            "type": "string"
+          },
+          {
+            "name": "Access_Days_Time_French",
+            "type": "string"
+          },
+          {
+            "name": "BD_Blends_French",
+            "type": "string"
+          },
+          {
+            "name": "Groups_With_Access_Code_French",
+            "type": "string"
+          },
+          {
+            "name": "Hydrogen_Is_Retail",
+            "type": "boolean"
+          },
+          {
+            "name": "Access_Code",
+            "type": "string"
+          },
+          {
+            "name": "Access_Detail_Code",
+            "type": "string"
+          },
+          {
+            "name": "Federal_Agency_Code",
+            "type": "string"
+          },
+          {
+            "name": "Facility_Type",
+            "type": "string"
+          },
+          {
+            "name": "CNG_Dispenser_Num",
+            "type": "int"
+          },
+          {
+            "name": "CNG_On_Site_Renewable_Source",
+            "type": "string"
+          },
+          {
+            "name": "CNG_Total_Compression_Capacity",
+            "type": "int"
+          },
+          {
+            "name": "CNG_Storage_Capacity",
+            "type": "int"
+          },
+          {
+            "name": "LNG_On_Site_Renewable_Source",
+            "type": "string"
+          },
+          {
+            "name": "E85_Other_Ethanol_Blends",
+            "type": "string"
+          },
+          {
+            "name": "EV_Pricing",
+            "type": "string"
+          },
+          {
+            "name": "EV_Pricing_French",
+            "type": "string"
+          },
+          {
+            "name": "LPG_Nozzle_Types",
+            "type": "string"
+          },
+          {
+            "name": "Hydrogen_Pressures",
+            "type": "string"
+          },
+          {
+            "name": "Hydrogen_Standards",
+            "type": "string"
+          },
+          {
+            "name": "CNG_Fill_Type_Code",
+            "type": "string"
+          },
+          {
+            "name": "CNG_PSI",
+            "type": "string"
+          },
+          {
+            "name": "CNG_Vehicle_Class",
+            "type": "string"
+          },
+          {
+            "name": "LNG_Vehicle_Class",
+            "type": "string"
+          },
+          {
+            "name": "EV_On_Site_Renewable_Source",
+            "type": "string"
+          },
+          {
+            "name": "Restricted_Access",
+            "type": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+  

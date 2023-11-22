@@ -1,0 +1,7 @@
+env/
+schemas/
+data/
+**/__pychache__
+**/*.pyc
+.git/
+.gitognore/
