@@ -60,9 +60,8 @@ export class MapsComponent implements OnInit {
 
     displayLocation(): void {
         this.clearMarkers();
-      
         if (this.zipCode) {
-          this.http.get<ApiResponse[]>(`http://127.0.0.1:5000/search?zipcode=${this.zipCode}`).subscribe(response => {
+          this.http.get<ApiResponse[]>(`http://127.0.0.1:5001/search?zipcode=${this.zipCode}`).subscribe(response => {
             response.forEach(location => {
               let infoContent = `<div><strong>${location.Station_Name}</strong><br>`;
               infoContent += `City: ${location.City}, ${location.State}<br>`;
