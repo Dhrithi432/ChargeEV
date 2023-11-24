@@ -11,9 +11,9 @@ interface ApiResponse {
     Num_level_1: number | null; // Assuming it can be null based on NaN value
     State: string;
     Station_Name: string;
+    Address: string;
     ZIP: string;
 }
-
 
 @Component({
   selector: 'app-maps',
@@ -22,6 +22,7 @@ interface ApiResponse {
 })
 export class MapsComponent implements OnInit {
     zipCode: string = '';
+    showFilters: boolean = false; // Used for toggling the filter dropdown
     private map: any;
     private markers: any[] = [];
 
@@ -38,26 +39,6 @@ export class MapsComponent implements OnInit {
         });
     }
 
-    // displayLocation(): void {
-    //     this.clearMarkers();
-      
-    //     if (this.zipCode) {
-    //       this.http.get<ApiResponse[]>(`http://127.0.0.1:5000/search?zipcode=${this.zipCode}`).subscribe(response => {
-    //         // Assuming response is an array of objects with Latitude and Longitude
-    //         response.forEach(location => {
-    //           this.addMarker({ lat: location.Latitude, lng: location.Longitude });
-    //         });
-      
-    //         // Optionally, center the map on the first location
-    //         if (response.length > 0) {
-    //           this.map.setCenter({ lat: response[0].Latitude, lng: response[0].Longitude });
-    //         }
-    //       });
-    //     } else {
-    //       console.error("Please enter a zip code.");
-    //     }
-    // }
-
     displayLocation(): void {
         this.clearMarkers();
         if (this.zipCode) {
@@ -66,9 +47,10 @@ export class MapsComponent implements OnInit {
               let infoContent = `<div><strong>${location.Station_Name}</strong><br>`;
               infoContent += `City: ${location.City}, ${location.State}<br>`;
               infoContent += `ZIP: ${location.ZIP}<br>`;
+              infoContent += `Address: ${location.Address}<br>`;
               infoContent += `Level 2 Chargers: ${location.Num_Level_2}<br>`;
               infoContent += `Level 1 Chargers: ${location.Num_level_1 ?? 'N/A'}</div>`;
-    
+
               this.addMarker({ lat: location.Latitude, lng: location.Longitude }, infoContent);
             });
       
@@ -80,35 +62,38 @@ export class MapsComponent implements OnInit {
           console.error("Please enter a zip code.");
         }
     }
-    
-
-    // private addMarker(location: { lat: number; lng: number; }): void {
-    //     const marker = new google.maps.Marker({
-    //         position: location,
-    //         map: this.map
-    //     });
-    //     this.markers.push(marker);
-    // }
 
     private addMarker(location: { lat: number; lng: number; }, infoContent: string): void {
         const marker = new google.maps.Marker({
             position: location,
             map: this.map
         });
-    
+
         const infoWindow = new google.maps.InfoWindow({
             content: infoContent
         });
-    
+
         marker.addListener("click", () => {
             infoWindow.open(this.map, marker);
         });
-    
+
         this.markers.push(marker);
     }
     
     private clearMarkers(): void {
         this.markers.forEach(marker => marker.setMap(null));
         this.markers = [];
+    }
+
+    // Function to toggle the visibility of the filter dropdown
+    toggleFilter(): void {
+        this.showFilters = !this.showFilters;
+    }
+
+    // Function to handle changes in filter options
+    onFilterChange(event: any): void {
+        // Your logic to handle filter changes goes here
+        console.log(event.target.id, ':', event.target.checked);
+        // You can call a service or apply a filter to your map based on the checked status
     }
 }

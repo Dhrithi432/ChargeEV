@@ -83,7 +83,7 @@ export class DashboardComponent implements OnInit {
     return Array.from({ length: 24 }, (_, i) => `${i}:00`);
   }
   private generateRandomDataFor24H(): number[] {
-    return Array.from({ length: 24 }, () => Math.floor(Math.random() * 100));
+    return Array.from({ length: 24 }, () => Math.floor(Math.random() * 200));
   }
   
   constructor() { 
@@ -198,7 +198,7 @@ export class DashboardComponent implements OnInit {
     const ctx = canvas.getContext('2d');
     const pieChartData = {
       datasets: [{
-        data: [10, 20, 30], // Replace with your actual data
+        data: [40, 10, 30], // Replace with your actual data
         backgroundColor: [
           'rgba(23, 162, 184, 0.6)', 
           'rgba(220, 53, 69, 0.6)', 
