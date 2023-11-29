@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StationService } from '../station.service';
+
 
 declare const google: any;
 
@@ -11,6 +13,7 @@ interface ApiResponse {
     Num_Level_2: number;
     Num_level_1: number | null; // Assuming it can be null based on NaN value
     State: string;
+    Address: string;
     Station_Name: string;
     ZIP: string;
 }
@@ -21,85 +24,73 @@ interface ApiResponse {
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  zipCode: string = '';
-  private map: any;
-  private markers: any[] = [];
+  stations: ApiResponse[] = [];
+  displayedStations: ApiResponse[] = [];
+  private pageIndex: number = 0;
+  private pageSize: number = 4;
+  location: string = '';
+  selectedStation: any; // Replace with your station type
+  showFilters: boolean = false;
 
-  constructor(private http: HttpClient,  private router: Router) {}
-
+  constructor(private router: Router, private stationService: StationService) {}
   ngOnInit(): void {
-    this.initMap();
+    throw new Error('Method not implemented.');
   }
 
-  private initMap(): void {
-    this.map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: { lat: 37.0902, lng: -95.7129 } // Center of USA
-  });
-  }
-
-  searchStations(): void {
-    if (!this.zipCode) {
-      alert("Please enter a zip code.");
-      return;
+  searchLocation(): void {
+    if (this.location) {
+      // Navigate to the map component and pass the ZIP code
+      this.router.navigate(['/map'], { queryParams: { zip: this.location } });
+    } else {
+      console.error("Please enter a ZIP code.");
     }
+  }
 
-    this.clearMarkers();
-    this.http.get<ApiResponse[]>(`http://127.0.0.1:5001/search?zipcode=${this.zipCode}`).subscribe(
-      response => {
-        if (response && response.length > 0) {
-          // Navigate to the map page with the ZIP code as a query parameter
-          this.router.navigate(['/map'], { queryParams: { zipCode: this.zipCode } });
-        } else {
-          alert("No stations found for the entered ZIP code.");
-        }
+  getStations(zipCode: string): void {
+    this.stationService.getStationsByZip(zipCode).subscribe(
+      (data) => {
+        this.stations = data;
+        this.updateDisplayedStations();
       },
-      error => {
-        console.error("Error fetching stations:", error);
-        alert("An error occurred while fetching stations.");
+      (error) => {
+        console.error('Error fetching stations:', error);
       }
     );
   }
+  updateDisplayedStations(): void {
+    const start = this.pageIndex * this.pageSize;
+    const end = start + this.pageSize;
+    this.displayedStations = this.stations.slice(start, end);
+  }
 
-  private processResponse(response: ApiResponse[]): void {
-    response.forEach(location => {
-      const infoContent = this.createInfoContent(location);
-      this.addMarker({ lat: location.Latitude, lng: location.Longitude }, infoContent);
-    });
-
-    if (response.length > 0) {
-      this.map.setCenter({ lat: response[0].Latitude, lng: response[0].Longitude });
+  nextPage(): void {
+    if ((this.pageIndex + 1) * this.pageSize < this.stations.length) {
+      this.pageIndex++;
+      this.updateDisplayedStations();
     }
   }
 
-  private createInfoContent(location: ApiResponse): string {
-    let content = `<div><strong>${location.Station_Name}</strong><br>`;
-    content += `City: ${location.City}, ${location.State}<br>`;
-    content += `ZIP: ${location.ZIP}<br>`;
-    content += `Level 2 Chargers: ${location.Num_Level_2}<br>`;
-    content += `Level 1 Chargers: ${location.Num_level_1 ?? 'N/A'}</div>`;
-    return content;
+  previousPage(): void {
+    if (this.pageIndex > 0) {
+      this.pageIndex--;
+      this.updateDisplayedStations();
+    }
   }
-private addMarker(location: { lat: number; lng: number; }, infoContent: string): void {
-  const marker = new google.maps.Marker({
-      position: location,
-      map: this.map
-  });
 
-  const infoWindow = new google.maps.InfoWindow({
-      content: infoContent
-  });
-
-  marker.addListener("click", () => {
-      infoWindow.open(this.map, marker);
-  });
-
-  this.markers.push(marker);
-}
-
-private clearMarkers(): void {
-  this.markers.forEach(marker => marker.setMap(null));
-  this.markers = [];
-}
+  private initMap(): void {
+    // Initialize your Google map here
+  }
+  
+  toggleFilter(): void {
+    this.showFilters = !this.showFilters;
+  }
+  
+  onFilterChange(event: any): void {
+    // Handle filter changes
+  }
+  
+  bookStation(stationId: string): void {
+    // Booking logic
+  }
   
 }

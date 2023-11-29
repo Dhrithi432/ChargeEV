@@ -35,12 +35,23 @@
   <div class="container mt-5 search-container">
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <div class="input-group mb-6">
-          <input type="text" class="form-control" placeholder="Enter ZIP Code" [(ngModel)]="zipCode">
-     
+        <div class="input-group input-group-lg mb-3">
+          <input type="text" [(ngModel)]="location" class="form-control" placeholder="Enter City or ZIP">
           <div class="input-group-append">
-            <button class="btn btn-outline-danger" type="button" (click)="searchStations()">Search</button>
+            <button class="btn btn-primary" type="button" (click)="searchLocation()">Search</button>
           </div>
+          <div *ngFor="let station of displayedStations">
+            <div class="station-item">
+              <h5>{{ station.Station_Name }}</h5>
+              <p>{{ station.Address }}</p>
+           
+            </div>
+          </div>
+          <!--<button (click)="previousPage()" [disabled]="pageIndex === 0">Previous</button>
+          <button (click)="nextPage()" [disabled]="(pageIndex + 1) * pageSize >= stations.length">Next</button>-->
+          <button (click)="previousPage()">Previous</button>
+          <button (click)="nextPage()">Next</button>
+          
         </div>
       </div>
     </div>

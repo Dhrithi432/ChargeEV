@@ -1,0 +1,13 @@
+
+.nav li.active, .nav li:hover {
+    color:  #00538b;
+}
+
+.nav li.active a, .nav li.active a i, .nav li.active a p,
+.nav li:hover a, .nav li:hover a i, .nav li:hover a p {
+    color:  #00538b; 
+}
+
+.nav li, .nav li a, .nav li a i, .nav li a p {
+    color: white; 
+}

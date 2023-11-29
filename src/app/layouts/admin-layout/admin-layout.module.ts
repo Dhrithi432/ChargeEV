@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ComponentsModule } from "../../components/components.module";
 
+
 @NgModule({
     declarations: [
         DashboardComponent,

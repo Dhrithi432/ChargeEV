@@ -29,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NgbModule,
     ReactiveFormsModule,
     ChartsModule,
+    
     ToastrModule.forRoot()
   ],
   declarations: [
@@ -37,6 +38,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ZipCodeSearchComponent,
     LandingComponent,
     LoginComponent,
+    
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
