@@ -15,7 +15,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { StationsComponent } from './stations/stations.component';
-import { VendorComponent } from './vendor/vendor.component';
+import { SownerComponent } from './sowner/sowner.component';
+
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { VendorComponent } from './vendor/vendor.component';
     LoginComponent,
     SignupComponent,
     StationsComponent,
-    VendorComponent,
+    SownerComponent,
+  
    
 
   ],
