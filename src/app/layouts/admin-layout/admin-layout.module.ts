@@ -27,6 +27,7 @@ import { ComponentsModule } from "../../components/components.module";
         IconsComponent,
         MapsComponent,
         NotificationsComponent
+
     ],
     imports: [
         CommonModule,

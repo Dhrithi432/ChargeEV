@@ -2,46 +2,8 @@
     height: 200%;
    
   }
-  .map-container {
-    display: flex;
-    position: relative;
-    height: 100vh; /* Adjust if necessary */
-  }
-.search-filter-bar{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000; 
-}
 .main-content{
   background-color:  #2f2e2e;;
-}
-.map-area {
-  flex-grow: 1; /* Fill the remaining width */
-  height: 100%;
-  /* Adjust map size and position as needed */
-}
-.station-sidebar {
-  width: 250px; /* Adjust width as needed */
-  background-color: #fff; /* Adjust color as needed */
-  overflow-y: auto; /* Scrollable sidebar */
-  height: 100%; /* Full height */
-  box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Shadow for depth */
-  padding: 1rem;
-  box-sizing: border-box;
-}
-.station-item {
-  margin-bottom: 1rem;
-  /* Add more styling for each station item */
-}
-
-.map-legend {
-  position: absolute;
-  bottom: 10px;
-  left: 260px; /* Adjust based on the sidebar width */
-  z-index: 1000;
-  /* Add more styling for the legend */
 }
 
   .custom-infowindow {
@@ -196,87 +158,15 @@
   margin-right: 5px;
 }
 .station-details-sidebar {
-  position: absolute;
-  top: 90px; /* Adjust as per your header's height */
-  right: 20px;
-  width: 400px; /* Adjust width as needed */
-  background:white;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(83, 79, 79, 0.1);
-  border-radius: 8px;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow-y: auto; /* In case of scrolling */
-  max-height: calc(100vh - 40px);
-  
+  position: absolute; 
+  top: 60px;
+  right: 0;
+  width: 300px; 
+  background: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 100; 
+  h2{
+    color: rgb(127, 63, 63);
+  }
 }
-.station-details-sidebar h2 {
-  color: #030303; /* Darker color for better readability */
-  font-size: 24px; /* Large font size for title */
-  margin-bottom: 10px;
-}
-
-.station-details-sidebar p {
-  color: #666; /* Lighter color for text */
-  font-size: 16px; /* Readable font size for details */
-  line-height: 1.6;
-  margin-bottom: 5px;
-}
-
-.station-details-sidebar button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #5e6062;; /* Primary color for action button */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease;
-}
-.station-details-sidebar button:hover {
-  background-color: #031d4a; /* Darker shade on hover for button */
-}
-
-/* Add styles for scrollbar to match with the theme if necessary */
-.station-details-sidebar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.map-search-bar {
-  position: relative;
-}
-
-.search-button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #007bff; /* Bootstrap primary color */
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.map {
-  height: 100%; /* Full height */
-}
-
-.filter-container {
-  position: absolute;
-  top: 70px; /* Adjust based on search bar position */
-  left: 20px;
-  z-index: 1000;
-}
-
-.station-details-sidebar {
-  position: absolute;
-  top: 70px; /* Adjust as needed */
-  right: 20px;
-  z-index: 1000;
-  /* Rest of your styles for station details */
-}
-

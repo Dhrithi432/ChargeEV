@@ -17,6 +17,7 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -28,8 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    ChartsModule,
-    
+    ChartsModule, 
     ToastrModule.forRoot()
   ],
   declarations: [

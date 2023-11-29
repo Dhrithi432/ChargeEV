@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild, ElementRef, NgZone  } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone, Input  } from '@angular/core';
 import { ApiService } from '../services/api.service';
 declare const google: any;
 
@@ -31,6 +31,8 @@ export class MapsComponent implements OnInit {
     stations: ApiResponse[] = []; 
     selectedStation: ApiResponse | null = null;
 
+    
+    @Input() mapClass: string; 
     @ViewChild('autocompleteInput') autocompleteInput: ElementRef;
     @ViewChild('mapContainer', { static: true }) mapContainer: ElementRef; // Add this line to reference the map container div
     private currentInfoWindow: google.maps.InfoWindow | null = null;
@@ -152,9 +154,14 @@ private addMarker(location: ApiResponse): void {
 }
 
      */
+
+closePopup(): void {
+  this.selectedStation = null;
+  // Additional logic if required
+}
     private addMarker(location: ApiResponse): void {
       const customIcon = {
-        url: 'assets/img/map_redIcon.png', // The URL to your marker image
+        url: 'assets/img/ev_mapIcon.png', // The URL to your marker image
         scaledSize: new google.maps.Size(60, 60), // Size of the icon
         origin: new google.maps.Point(0, 0), // Origin point of the icon
         anchor: new google.maps.Point(30, 30), // Anchor point. Assumes the tip of the icon is at the bottom center

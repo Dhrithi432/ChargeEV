@@ -40,7 +40,7 @@ export class LandingComponent implements OnInit {
   searchLocation(): void {
     if (this.location) {
       // Navigate to the map component and pass the ZIP code
-      this.router.navigate(['/map'], { queryParams: { zip: this.location } });
+      this.router.navigate(['/maps'], { queryParams: { zip: this.location } });
     } else {
       console.error("Please enter a ZIP code.");
     }

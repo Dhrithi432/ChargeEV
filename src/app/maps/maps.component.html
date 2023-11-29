@@ -1,9 +1,15 @@
+
+<div class="panel-header panel-header-sm">
+</div>
 <div class="main-content">
   <div class="row">
     <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header ">
+          Google Maps
+        </div>
         <div class="card-body ">
-          <div class="map-container">
-            <div class="search-filter-bar">
+          <div>
             <input type="text" [(ngModel)]="location" placeholder="Search Location" class="search-bar">
             <button (click)="displayLocation()" class="search-button">Search</button>
              <button class="filter-button" (click)="toggleFilter()">Filters</button>
@@ -21,17 +27,6 @@
                  <label for="level2">Level 2</label>
                </div>
              </div>
-             <div class="station-sidebar" *ngIf="stations.length > 0">
-              <div class="station-item" *ngFor="let station of stations">
-                <h5>{{ station.Station_Name }}</h5>
-                <p>{{ station.Address }}</p>
-                <p>City: {{ station.City }}</p>
-                <p>ZIP: {{ station.ZIP }}</p>
-                <p>Level 2 Chargers: {{ station.Num_Level_2 }}</p>
-                <p>Level 1 Chargers: {{ station.Num_level_1 }}</p>
-                <button (click)="bookStation(station.id)">Book Station</button>
-              </div>
-            </div>
              <div *ngIf="selectedStation" class="station-details-sidebar">
               <h2 style="color:rgb(127, 63, 63);"><strong>{{ selectedStation.Station_Name }}</strong></h2>
               <p>{{ selectedStation.Address }}</p>
@@ -41,14 +36,15 @@
               <p>Level 1 Chargers: {{ selectedStation.Num_level_1 }}</p>
               <button (click)="bookStation(selectedStation.id)">Book Station</button>
             </div>
-            <div class="map-area" id="map" style="height: 900px; position: relative;"></div>
+            <div [ngClass]="mapClass" id="map" style="height: 600px;"></div>
             <div class="map-legend">
               <span class="legend-item"><span class="legend-color dc-fast-charging"></span>DC Fast Charging</span>
               <span class="legend-item"><span class="legend-color level1-charging"></span>Level 1</span>
             </div>
-            </div>
-          </div>   
+          </div>
+          
         </div>
+      </div>
     </div>
   </div>
 </div>
