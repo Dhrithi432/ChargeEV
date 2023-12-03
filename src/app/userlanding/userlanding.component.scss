@@ -1,0 +1,59 @@
+.user-landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0D1A26; /* Dark blue background, adjust the color as needed */
+  color: white;
+  text-align: center;
+  font-family: 'Arial', sans-serif; /* Use a common font, change as needed */
+}
+
+.hero-section {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for the form background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for depth */
+}
+
+input[type="text"], .btn-primary {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  margin: 0.5rem 0; /* Spacing between input and button */
+}
+
+input[type="text"] {
+  width: calc(100% - 3rem); /* Adjust width as necessary, accounting for padding */
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%; /* Button width matches input field */
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Additional styles for responsive design */
+@media (max-width: 768px) {
+  .hero-section {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  input[type="text"], .btn-primary {
+    padding: 0.5rem 1rem; /* Smaller padding on smaller screens */
+  }
+}

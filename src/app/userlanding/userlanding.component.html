@@ -1,0 +1,14 @@
+<div class="user-landing">
+  <div class="hero-section">
+    <h2>Welcome to the EV Charging Station Finder</h2>
+    <p>Enter your ZIP code to find the nearest charging stations:</p>
+
+    <!-- Add a (submit) event that calls the findStations() function -->
+    <form class="zip-search-form" (ngSubmit)="findStations($event)">
+      <div class="form-group zip-input-group">
+        <input type="text" id="zipCode" name="zipCode" [(ngModel)]="zipCode" class="form-control" placeholder="Enter ZIP Code">
+        <button type="submit" class="btn btn-primary">Find Stations</button>
+      </div>
+    </form>
+  </div>
+</div>
