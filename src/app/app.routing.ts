@@ -10,7 +10,8 @@ import { MapsComponent } from './maps/maps.component';
 import { LandingComponent } from './landing/landing.component';
 import { UserComponent } from './user/user.component'; // Assuming this component exists
 import { UserlandingComponent } from './userlanding/userlanding.component';
-import { TableListComponent } from './stations/table-list.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'user-landing', component: UserlandingComponent }, // Use a different path here
   { path: 'table-list', component: TableListComponent },
+  { path: 'transactions', component: TransactionsComponent },
   
 
   

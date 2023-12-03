@@ -18,7 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './user/user.component';
 import { UserlandingComponent } from './userlanding/userlanding.component';
-import { TableListComponent } from './stations/table-list.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { TableListComponent } from './stations/table-list.component';
     LoginComponent,
     UserComponent,
     UserlandingComponent,
+    TransactionsComponent,
     
   ],
   schemas: [

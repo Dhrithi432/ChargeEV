@@ -1,0 +1,32 @@
+`<!-- Your existing table structure -->
+<table class="table">
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>User ID</th>
+        <th>EV ID</th>
+        <th>Charging Station ID</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Energy Consumed (kWh)</th>
+        <th>Total Cost</th>
+        <th>Payment Method</th>
+        <th>Charging Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.transactionId }}</td>
+        <td>{{ transaction.userId }}</td>
+        <td>{{ transaction.evId }}</td>
+        <td>{{ transaction.chargingStationId }}</td>
+        <td>{{ transaction.startTime | date }}</td>
+        <td>{{ transaction.endTime | date }}</td>
+        <td>{{ transaction.energyConsumed }}</td>
+        <td>{{ transaction.totalCost | currency }}</td>
+        <td>{{ transaction.paymentMethod }}</td>
+        <td>{{ transaction.chargingType }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
