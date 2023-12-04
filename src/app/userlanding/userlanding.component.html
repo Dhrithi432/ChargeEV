@@ -1,0 +1,47 @@
+<div class="landing-page">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-brand">
+      <img src="assets/img/EV_Logo.jpeg" alt="Logo" class="navbar-logo">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle business_briefcase-24" id="businessDropdown" ngbDropdownToggle>
+            For Businesses
+          </a>
+          <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="businessDropdown">
+            <a class="dropdown-item" href="#/login">Login</a>
+            <a class="dropdown-item" href="#/register">Register</a>
+            <a class="dropdown-item" href="#/dashboard">Dashboard</a>
+            <a class="dropdown-item" href="#/settings">Settings</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="driverDropdown" ngbDropdownToggle>
+            For Drivers
+          </a>
+          <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="driverDropdown">
+            <a class="dropdown-item" href="#/login">Login</a>
+            <a class="dropdown-item" href="#/register">Register</a>
+            <a class="dropdown-item" href="#/dashboard">Dashboard</a>
+            <a class="dropdown-item" href="#/settings">Settings</a>
+          </div>
+        </li>   
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header" style="background-image: url('assets/img/EV_BG.jpeg');">
+    <div class="container">
+      <div class="row justify-content-center align-items-center" style="min-height: 700px;">
+        <div class="col-md-6 text-center">
+          <h1 class="display-3 text-white">Welcome to EV Station Management</h1>
+          <p class="lead text-light">Find and manage your EV stations with ease.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

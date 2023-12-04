@@ -3,7 +3,8 @@ import Chart, { ChartType } from 'chart.js';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { ChartsModule } from 'ng2-charts';
 import { Label } from 'ng2-charts';
-import * as Chartist from 'chartist';
+import { DashboardService } from '../services/dashboard.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,8 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
   vehicles: any[];
+  public myPieChart: Chart;
+  public myBarChart: Chart;
  
   public lineBigDashboardChartType: string | undefined;
   public gradientStroke: { addColorStop: (arg0: number, arg1: string) => void; };
@@ -86,13 +89,108 @@ export class DashboardComponent implements OnInit {
     return Array.from({ length: 24 }, () => Math.floor(Math.random() * 200));
   }
   
-  constructor() { 
+  constructor( private dashboardServc: DashboardService) { 
    this.vehicles = [
       { name: 'Honda Accord', city: 'San Jose', amount: 30 },
       { name: 'Toyota Camry', city: 'Los Angeles', amount: 35 },
       // ... more data
     ];
     
+  }
+
+  private initializeCharts() {
+    // Initialize Pie Chart
+    const pieCanvas = document.getElementById('myPieChart') as HTMLCanvasElement;
+  if (pieCanvas) {
+    const pieCtx = pieCanvas.getContext('2d');
+    if (pieCtx) {
+      this.myPieChart = new Chart(pieCtx, {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: [], // Data will be set by the API
+          backgroundColor: ['rgba(23, 162, 184, 0.6)', 'rgba(220, 53, 69, 0.6)', 'rgba(255, 193, 7, 0.6)'],
+          borderColor: ['rgba(23, 162, 184, 1)', 'rgba(220, 53, 69, 1)', 'rgba(255, 193, 7, 1)'],
+          borderWidth: 1,
+        }],
+        labels: ['Available', 'Out-of-service', 'Maintenance'],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+        // ... other options ...
+      }
+    });
+  }
+}
+
+    // Initialize Bar Chart
+    const barCanvas = document.getElementById('myBarChart') as HTMLCanvasElement;
+  if (barCanvas) {
+    const barCtx = barCanvas.getContext('2d');
+    if (barCtx) {
+      this.myBarChart = new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: this.generateLabelsFor24H(),
+        datasets: [{
+          label: 'Performance',
+          data: [], // Data will be set by the API
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+        // ... other options ...
+      }
+    });
+  }
+}
+  }
+
+  private fetchChartData() {
+    // Fetch Pie Chart Data
+    this.dashboardServc.getPieChartData().subscribe(data => {
+      this.updatePieChart(data);
+    });
+
+    // Fetch Bar Chart Data
+    this.dashboardServc.getBarChartData().subscribe(data => {
+      this.updateBarChart(data);
+    });
+  }
+
+  private updatePieChart(data: any): void {
+    if (this.myPieChart && this.myPieChart.data.datasets) {
+      if (this.myPieChart.data.datasets.length > 0) {
+        this.myPieChart.data.datasets[0].data = data;
+        this.myPieChart.update();
+      } else {
+        // Handle the case where the datasets array is empty
+        console.error('Pie chart datasets array is empty');
+      }
+    } else {
+      console.error('Pie chart or its datasets is undefined');
+    }
+  }
+
+  private updateBarChart(data: any): void {
+    if (this.myBarChart && this.myBarChart.data && this.myBarChart.data.datasets) {
+      if (this.myBarChart.data.datasets.length > 0) {
+        this.myBarChart.data.datasets[0].data = data;
+        this.myBarChart.update();
+      } else {
+        // Handle the case where the datasets array is empty
+        console.error('Bar chart datasets array is empty');
+        // Optionally, initialize the datasets array here
+      }
+    } else {
+      console.error('Bar chart, its data, or datasets is undefined');
+      // Handle the undefined cases appropriately
+    }
   }
 
   ngOnInit() {
@@ -192,7 +290,9 @@ export class DashboardComponent implements OnInit {
               }]
           }
     };
+
     //pie chart
+   
     
     const canvas = document.getElementById('myPieChart') as HTMLCanvasElement;
     const ctx = canvas.getContext('2d');

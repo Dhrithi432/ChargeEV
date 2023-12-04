@@ -10,7 +10,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'design_app', class: '' },
     { path: '/maps', title: 'Maps',  icon:'location_map-big', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'ui-1_bell-53', class: '' },
-
+    { path: '/icons', title: 'Icons',  icon:'education_atom', class: '' },
+    { path: '/stations', title:'Stations', icon:'', class:''},
     { path: '/user-profile', title: 'User Profile',  icon:'users_single-02', class: '' },
     /*{ path: '/table-list', title: 'Table List',  icon:'design_bullet-list-67', class: '' },
     { path: '/icons', title: 'Icons',  icon:'education_atom', class: '' },
@@ -26,7 +27,15 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems!: any[];
+  activeMenuItem: string = '';
 
+setActive(path: string) {
+    this.activeMenuItem = path;
+}
+
+isActive(path: string) {
+    return this.activeMenuItem === path;
+}
   constructor() { }
 
   ngOnInit() {

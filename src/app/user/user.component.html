@@ -1,0 +1,42 @@
+
+<div class="row-2" style="background-color:black">
+<nav class="navbar" >
+  <div class="navbar-brand">Charge EV</div>
+  <div class="navbar-menu" >
+  
+  </div>
+</nav>
+
+<div class="card" style="background-color:black">
+<div class="main-container">
+  <div class="search-container">
+    <input type="text" [(ngModel)]="location" placeholder="Search Location" class="search-bar">
+    
+    <button (click)="displayLocation()" class="search-button">Search</button>
+  </div>
+  <div class="content">
+    <div  class="search-results">
+      <div *ngFor="let station of stations" class="station-item" (click)="selectStation(station)">
+        <div class="station-header">
+        <img src="assets/img/evList-logo.png" alt="{{ station.Station_Name }} Logo" class="station-logo">
+        <h3>{{ station.Station_Name }}</h3>
+        </div>
+        <p>{{ station.Address }}</p>
+        <p>{{ station.City }}, {{ station.State }} {{ station.ZIP }}</p>
+        <!-- Add more details as needed -->
+      </div>
+      <div *ngIf="selectedStation" class="station-details-sidebar" style="color: black">
+      <h2 style="color:rgb(127, 63, 63);"><strong>{{ selectedStation.Station_Name }}</strong></h2>
+      <p>{{ selectedStation.Address }}</p>
+      <p>City: {{ selectedStation.City }}</p>
+      <p>ZIP: {{ selectedStation.ZIP }}</p>
+      <p>Level 2 Chargers: {{ selectedStation.Num_Level_2 }}</p>
+      <p>Level 1 Chargers: {{ selectedStation.Num_level_1 }}</p>
+      <button (click)="backToList()" class="back-button">Back</button>
+    </div>
+    </div>
+    <div [ngClass]="mapClass" id="map" style="height: 900px;"></div>
+    </div>
+</div>
+</div>
+</div>

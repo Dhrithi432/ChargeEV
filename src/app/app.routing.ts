@@ -4,7 +4,10 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MapsComponent } from './maps/maps.component';
-import { LandingComponent } from './landing/landing.component';
+import { UserComponent } from './user/user.component'; // Assuming this component exists
+import { UserlandingComponent } from './userlanding/userlanding.component';
+
+
 
 const routes: Routes =[
   
@@ -13,8 +16,9 @@ const routes: Routes =[
     redirectTo: 'dashboard',
     pathMatch: 'full',
   }, 
+  { path: 'user-landing', component: UserlandingComponent },
+  { path: 'user', component: UserComponent },
   
-  { path: 'landing', component: LandingComponent },
   { path: 'map', component: MapsComponent },
 
   {
@@ -23,12 +27,14 @@ const routes: Routes =[
     children: [
         {
       path: '',
-      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(x=>x.AdminLayoutModule)
+      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
   }]},
   {
     path: '**',
     redirectTo: 'dashboard'
-  }
+  },
+  { path: 'user', component: UserComponent },
+ 
   
 ];
 

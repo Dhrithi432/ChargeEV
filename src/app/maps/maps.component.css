@@ -1,34 +1,10 @@
 .container-fluid, .row, .col-md-3, .col-md-9 {
-    height: 100%;
+    height: 200%;
+   
   }
-  
-  #map {
-    width: 100%;
-    
-  }
-  
-  .list-group-item {
-    cursor: pointer;
-    &:hover {
-      background-color: #f8f9fa;
-    }
-  }
-
-  #map-container {
-    position: relative; /* Needed to position the search bar absolutely relative to this container */
-    height: 500px; /* Set the desired height for your map container */
-  }
-
-  /* maps.component.css */
-.info-window-content h3 {
-    font-size: 16px;
-    margin: 0 0 5px 0;
-  }
-  
-  .info-window-content p {
-    font-size: 14px;
-    margin: 4px 0;
-  }
+.main-content{
+  background-color:  #2f2e2e;;
+}
 
   .custom-infowindow {
     font-family: 'Arial', sans-serif;
@@ -69,6 +45,7 @@
   
   .search-bar {
     padding: 10px;
+    width: 40%;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
@@ -76,37 +53,34 @@
 
   .search-button {
     padding: 10px 20px;
-    background-color: #1a73e8;
+    background-color: #5e6062;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 5px; /* Adjust or remove if you are using flexbox for positioning */
+    margin-left: 5px; 
   }
   
 
   .search-container {
   position: absolute;
-  top: 10px; /* Adjust the value as needed */
+  top: 10px; 
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10; /* Ensure it's above the map */
+  z-index: 10; 
   display: flex;
   align-items: center;
 }
 
-/* Add your existing styles here */
-
-/* New legend styles */
 .map-legend {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.8); 
   padding: 10px;
   border-radius: 5px;
-  z-index: 10; /* Above the map */
+  z-index: 10; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,62 +89,67 @@
 .legend-item {
   display: flex;
   align-items: center;
-  margin-right: 15px; /* Space between legend items */
+  margin-right: 15px; 
 }
 
 .legend-color {
   width: 20px;
   height: 20px;
-  border-radius: 50%; /* Circle shape */
+  border-radius: 50%; 
   margin-right: 5px;
   display: inline-block;
 }
 
 .dc-fast-charging {
-  background-color: #007bff; /* Blue for fast charging, change as needed */
+  background-color: #007bff; 
 }
 
 .level1--charging {
-  background-color: #bfff00; /* Blue for fast charging, change as needed */
+  background-color: #bfff00; 
 }
 
 .level2--charging {
-  background-color: #00ff4c; /* Blue for fast charging, change as needed */
+  background-color: #00ff4c; 
 }
 
 .filter-button {
-  position: absolute; /* Position relative to the parent */
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
   padding: 10px 20px;
-  background-color: #007bff; /* Example color - Electric Blue */
-  color: white;
+  background-color: #3f4142; 
+  color: rgb(252, 250, 250);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  z-index: 10; /* To ensure the button stays above other elements */
-  outline: none; /* To remove focus border in some browsers */
+  z-index: 10; 
+  outline: none; 
 }
 
-/* When the filter dropdown is visible, you might want to change the style of the button */
 .filter-button.active {
-  background-color: #0056b3; /* A slightly darker blue to indicate active state */
+  background-color: #0056b3; 
 }
 
 .filter-dropdown {
-  display: none; /* Hide dropdown by default */
+  display: none; 
   position: absolute;
-  top: 100%; /* Position below filter button */
+  top: 100%; 
   right: 10px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 10px;
-  z-index: 20; /* Above other elements */
+  z-index: 20; 
 }
 
+.full-screen {
+  height: 100vh;
+}
+.with-sidebar {
+  height: calc(100vh - 100px); /* Example, adjust based on your actual header/sidebar height */
+}
 .filter-dropdown.show {
-  display: block; /* Show dropdown when 'show' class is added */
+  display: block; 
 }
 
 .filter-option {
@@ -183,4 +162,17 @@
 
 .filter-option input {
   margin-right: 5px;
+}
+.station-details-sidebar {
+  position: absolute; 
+  top: 60px;
+  right: 0;
+  width: 300px; 
+  background: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 100; 
+  h2{
+    color: rgb(127, 63, 63);
+  }
 }

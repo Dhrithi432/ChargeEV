@@ -12,10 +12,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { ZipCodeSearchComponent } from './zip-code-search/zip-code-search.component';
-import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserlandingComponent } from './userlanding/userlanding.component';
+import { SlideMenuModule } from 'primeng/slidemenu';
+import { UserComponent } from './user/user.component';
+import { DialogModule } from 'primeng/dialog';
+
+
 
 @NgModule({
   imports: [
@@ -25,18 +29,22 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
     ComponentsModule,
     RouterModule,
+    SlideMenuModule,
+    DialogModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    ChartsModule,
-    ToastrModule.forRoot()
+    ChartsModule, 
+    ToastrModule.forRoot(),
+   
+    
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ZipCodeSearchComponent,
-    LandingComponent,
     LoginComponent,
+    UserlandingComponent,
+    UserComponent,  
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

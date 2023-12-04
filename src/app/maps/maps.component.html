@@ -1,6 +1,6 @@
+
 <div class="panel-header panel-header-sm">
 </div>
-
 <div class="main-content">
   <div class="row">
     <div class="col-md-12">
@@ -10,34 +10,40 @@
         </div>
         <div class="card-body ">
           <div>
-            <input type="text" [(ngModel)]="zipCode" placeholder="Enter Location" class="search-bar">
+            <div [class.full-screen]="fullScreen" [class.with-sidebar]="showSidebar">
+            <input type="text" [(ngModel)]="location" placeholder="Search Location" class="search-bar">
             <button (click)="displayLocation()" class="search-button">Search</button>
-            <!-- Filter button -->
-            <button class="filter-button" (click)="toggleFilter()">Filters</button>
-            <!-- Dropdown menu for filters, hidden by default -->
-            <div class="filter-dropdown" [class.show]="showFilters">
-              <!-- Filter options -->
-              <div class="filter-option">
-                <input type="checkbox" id="ccs" (change)="onFilterChange($event)">
-                <label for="ccs">CCS</label>
-              </div>
-              <div class="filter-option">
-                <input type="checkbox" id="chademo" (change)="onFilterChange($event)">
-                <label for="chademo">CHAdeMO</label>
-              </div>
-              <div class="filter-option">
-                <input type="checkbox" id="level2" (change)="onFilterChange($event)">
-                <label for="level2">Level 2</label>
-              </div>
-              <!-- Add more filter options as needed -->
+             <button class="filter-button" (click)="toggleFilter()">Filters</button>
+             <div class="filter-dropdown" [class.show]="showFilters">
+               <div class="filter-option">
+                 <input type="checkbox" id="ccs" (change)="onFilterChange($event)">
+                 <label for="ccs">DC Fast</label>
+               </div>
+               <div class="filter-option">
+                 <input type="checkbox" id="chademo" (change)="onFilterChange($event)">
+                 <label for="chademo">Level 1</label>
+               </div>
+               <div class="filter-option">
+                 <input type="checkbox" id="level2" (change)="onFilterChange($event)">
+                 <label for="level2">Level 2</label>
+               </div>
+             </div>
+             <div *ngIf="selectedStation" class="station-details-sidebar">
+              <h2 style="color:rgb(127, 63, 63);"><strong>{{ selectedStation.Station_Name }}</strong></h2>
+              <p>{{ selectedStation.Address }}</p>
+              <p>City: {{ selectedStation.City }}</p>
+              <p>ZIP: {{ selectedStation.ZIP }}</p>
+              <p>Level 2 Chargers: {{ selectedStation.Num_Level_2 }}</p>
+              <p>Level 1 Chargers: {{ selectedStation.Num_level_1 }}</p>
+              <button (click)="bookStation(selectedStation.id)">Book Station</button>
             </div>
-            <div id="map" style="height: 500px;"></div>
+            <div [ngClass]="mapClass" id="map" style="height: 600px;"></div>
             <div class="map-legend">
               <span class="legend-item"><span class="legend-color dc-fast-charging"></span>DC Fast Charging</span>
               <span class="legend-item"><span class="legend-color level1-charging"></span>Level 1</span>
-              <!-- Add more legend items as needed -->
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

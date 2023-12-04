@@ -1,0 +1,239 @@
+/* In your user.component.scss file */
+#user-map {
+    height: 500px; // Set height to 500px or 100% if you want it to fill the parent container
+    width: 100%; // Set width to 100% to fill the width of its container
+  }
+  body {
+    background-color: black;
+    color: white;
+}
+
+// Set the card's background to black and text color to white for visibility
+.card {
+  background-color: black;
+  color: white;
+}
+  .navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+.search-container {
+  display: flex;
+  justify-content: left; /* Center the search bar and button */
+  padding: 1em;
+  color: white;
+}
+.search-results {
+  transform: translateX(0);
+  background-color: white;
+  overflow-y: auto; // Enable scrolling for overflow
+  height: 900px; // Match the map height or as per design requirements
+}
+.station-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee; // Separator between items
+
+  h3 {
+    margin: 0;
+    color: #333; // Dark text for readability
+  }
+
+  p {
+    margin: 0;
+    color: #666; // Lighter text for less important details
+  }
+}
+.station-details{
+  transform: translateX(-100%);
+  background-color: white; // Or any color you prefer
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+.main-container, .station-details-sidebar, .map {
+  background-color: black;
+  color: white;
+}
+::ng-deep .p-slidemenu {
+  .p-slidemenu-wrapper {
+    background-color: white; // Or any color you prefer
+    // Add other styles for the slide menu here
+  }
+}
+.search-bar {
+  padding: 0.5em;
+  color: white;
+  background-color: #555;
+  border: 1px solid #555; /* A light border for visibility */
+  border-radius: 20px; /* Rounded corners */
+  margin-right: 0.5em; /* Spacing between search bar and button */
+  flex-grow: 1; /* Make search bar grow to use available space */
+  max-width: 400px; /* Maximum width of the search bar */
+}
+/* ...existing styles... */
+
+.station-details {
+  background-color: white;
+  padding: 10px;
+  /* Additional styling for the details view */
+}
+.station-item {
+  display: block;
+  margin-bottom: 20px; /* Space between station items */
+}
+
+.station-header {
+  display: flex;
+  align-items: center; /* This will vertically center the logo with the station name */
+}
+
+.station-logo {
+  width: 40px; /* Adjust as needed */
+  height: auto;
+  margin-right: 10px; /* Space between logo and station name */
+}
+
+h3 {
+  margin: 0; /* Removes default margin to align better with the logo */
+}
+
+.station-logo {
+  width: 50px; /* Adjust this to your desired width */
+  height: auto; /* This will maintain the aspect ratio of the image */
+  margin-right: 10px; /* Optional: Adds some space between the logo and the text */
+  vertical-align: middle; /* Aligns the image vertically with the adjacent text */
+}
+.custom-infowindow {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  width: 250px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #333;
+}
+
+.station-item.selected {
+  background-color: #e9ecef;
+  /* Styling for selected station item */
+}
+
+/* Style for the Back button */
+button {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  /* Additional button styling */
+}
+
+button:hover {
+  background-color: #5a6268;
+}
+
+
+
+.search-button {
+  padding: 10px 25px; /* Adjust padding to your preference */
+  font-size: 1rem; /* Adjust font size to your preference */
+  font-weight: bold;
+  background-color: #6c757d; /* This is a gray similar to your screenshot */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Pill shape */
+  cursor: pointer;
+  outline: none; /* Removes the outline to make it look cleaner */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #5a6268; /* Slightly darker shade on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+  }
+
+  &:active {
+    background-color: #545b62; /* Even darker shade when the button is clicked */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Simulates the button being pressed down */
+  }
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em;
+  .search-bar {
+      flex: 1;
+      padding: 0.5em;
+      margin-right: 1em;
+      border-radius: 5px;
+      border: none;
+  }
+ 
+}
+.content {
+  display: flex;
+  height: 900px; // Or use 100vh for full viewport height
+
+  .search-results-container {
+    flex: 0 0 350px; // Assigns fixed width to the station list
+    overflow-y: auto; // Enables scrolling for the station list
+    background-color: #f8f9fa; // A light background color for the station list
+    float: left;
+  }
+
+  #map {
+    flex-grow: 1; // The map takes up the remaining space
+    height: 900px; // Match the station list height
+  }
+}
+
+.map-container {
+  position: relative; // Needed for absolute positioning of children
+  height: 900px;
+  width: 100%; // Take up all available width
+}
+
+.search-results-container {
+  position: absolute; // Position over the map
+  height: 100%;
+  transition: transform 0.3s ease-out;
+  top: 0;
+  left: 0; // Adjust if you want the list to be a bit more left
+  width: 350px; // Width of the station list
+  max-height: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.95); // Translucent white
+  border-top-right-radius: 8px; // Rounded corners
+  border-bottom-right-radius: 8px;
+  overflow-y: auto; // Scroll if content is too long
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); // Shadow for a "lifted" effect
+  z-index: 10; // Make sure it's above the map
+}
+
+.station-item {
+  background: #FFF; // Solid white for the items
+  margin-bottom: 10px; // Space between items
+  padding: 10px;
+  border-radius: 4px; // Rounded edges for items
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Subtle shadow for each item
+
+  &:last-child {
+    margin-bottom: 0; // Remove margin for the last item
+  }
+  &.selected {
+    background-color: #e9ecef; // A light grey to indicate selection
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Stronger shadow for selected item
+  }
+
+}
+

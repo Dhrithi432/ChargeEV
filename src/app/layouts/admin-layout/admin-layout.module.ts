@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
@@ -16,16 +15,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ComponentsModule } from "../../components/components.module";
 
+
 @NgModule({
     declarations: [
         DashboardComponent,
-        UserProfileComponent,
         TableListComponent,
         UpgradeComponent,
         TypographyComponent,
         IconsComponent,
         MapsComponent,
-        NotificationsComponent
+        NotificationsComponent,
     ],
     imports: [
         CommonModule,
