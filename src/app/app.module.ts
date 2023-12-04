@@ -18,6 +18,7 @@ import { UserlandingComponent } from './userlanding/userlanding.component';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { UserComponent } from './user/user.component';
 import { DialogModule } from 'primeng/dialog';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -44,7 +45,8 @@ import { DialogModule } from 'primeng/dialog';
     AdminLayoutComponent,
     LoginComponent,
     UserlandingComponent,
-    UserComponent,  
+    UserComponent,
+    SignupComponent,  
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

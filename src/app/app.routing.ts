@@ -6,10 +6,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { MapsComponent } from './maps/maps.component';
 import { UserComponent } from './user/user.component'; // Assuming this component exists
 import { UserlandingComponent } from './userlanding/userlanding.component';
-
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes =[
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: '',
+  redirectTo: 'user-landing',
+   component: UserlandingComponent },
   
   {
     path: '',
