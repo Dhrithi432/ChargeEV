@@ -13,10 +13,10 @@
             For Businesses
           </a>
           <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="businessDropdown">
-            <a class="dropdown-item" href="#/login">Login</a>
-            <a class="dropdown-item" href="#/register">Register</a>
-            <a class="dropdown-item" href="#/dashboard">Dashboard</a>
-            <a class="dropdown-item" href="#/settings">Settings</a>
+            <a class="dropdown-item" [routerLink]="['/login']">Login</a> <!-- Redirect to the login page -->
+            <a class="dropdown-item" [routerLink]="['/signup/business']">Register</a>
+
+            
           </div>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
@@ -24,10 +24,9 @@
             For Drivers
           </a>
           <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="driverDropdown">
-            <a class="dropdown-item" href="#/login">Login</a>
-            <a class="dropdown-item" href="#/register">Register</a>
-            <a class="dropdown-item" href="#/dashboard">Dashboard</a>
-            <a class="dropdown-item" href="#/settings">Settings</a>
+            <a class="dropdown-item" [routerLink]="['/login1']">login</a> <!-- Redirect to the login page -->
+            <a class="dropdown-item" [routerLink]="['/signup1']">Register</a>
+            
           </div>
         </li>   
       </ul>

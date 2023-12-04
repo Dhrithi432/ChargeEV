@@ -1,0 +1,114 @@
+/* General Styles */
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Changed to a lighter shade for overall background */
+    margin: 0; /* Ensure there is no default margin */
+    padding: 0; /* Ensure there is no default padding */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+}
+
+.main-content {
+    padding: 20px;
+    margin: 0; /* Adjust to remove margin for full width */
+    transition: margin-left .5s; /* Smooth transition for sidebar toggle */
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Space between card and table */
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 10px; /* Space between form fields */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px;
+}
+
+button {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 15px;
+    background-color: #2c2a2a; /* Red background for the button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space below the button */
+}
+
+button:hover {
+    background-color: #2e2e2e; /* Darker red on hover */
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto; /* Ensures the table is responsive */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; /* Adjusted space between form and table */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Light grey border */
+}
+
+th, td {
+    text-align: left;
+    padding: 15px; /* Increased padding for better spacing */
+}
+
+th {
+    background-color: #292727; /* Red background for headers */
+    color: white;
+}
+
+td {
+    background-color: #FFFFFF; /* White background for cells */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+/* Responsive Adjustment */
+@media (max-width: 1000px) {
+    .main-content {
+        padding: 10px; /* Reduced padding for small screens */
+    }
+
+    .card {
+        margin: 10px; /* Reduced margin for small screens */
+    }
+
+    form, button {
+        width: 100%; /* Full width for form and button */
+    }
+}
+
+/* Ensure the sidebar does not affect the main content width */
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    position: fixed; /* Fixed position so it doesn't affect the main content */
+}
+
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 100%; /* Full width sidebar on small screens */
+        height: auto; /* Auto-adjust height */
+        position: relative; /* Relative position */
+    }
+}

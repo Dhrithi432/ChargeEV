@@ -8,24 +8,31 @@ import { UserComponent } from './user/user.component'; // Assuming this componen
 import { UserlandingComponent } from './userlanding/userlanding.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { Login1Component } from './login1/login1.component';
+import { Signup1Component } from './signup1/signup1.component';
 
 
 const routes: Routes =[
   { path: 'login', component: LoginComponent },
+  { path: 'login1', component: Login1Component },
   { path: 'signup', component: SignupComponent },
+  { path: 'signup1', component: Signup1Component },
   { path: '',
-  redirectTo: 'user-landing',
-   component: UserlandingComponent },
+  redirectTo: 'user-landing',component: UserlandingComponent },
   
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }, 
+  
   { path: 'user-landing', component: UserlandingComponent },
   { path: 'user', component: UserComponent },
   
   { path: 'map', component: MapsComponent },
+  { path: 'login/business', component: LoginComponent }, // Business login route
+  { path: 'login1/driver', component: Login1Component },
+  { path: 'signup/business', component: SignupComponent },
+  { path: 'signup1/driver', component: Signup1Component },
+   // Business signup route
+
+  
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   {
     path: '',

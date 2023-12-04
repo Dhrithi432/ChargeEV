@@ -1,0 +1,40 @@
+/* Apply styles to the table */
+.table {
+    width: 100%; /* Full width of the card */
+    max-width: 100%; /* Ensures the table does not exceed the card */
+    border-collapse: collapse; /* Collapses cell borders */
+    table-layout: fixed; /* Fixes table layout to avoid overflow */
+}
+
+/* Style the table header */
+.table thead th {
+    background-color: #f2f2f2; /* Light grey background for the header */
+    padding: 10px; /* Padding inside header cells */
+    text-align: left; /* Left-align text in header cells */
+    border-bottom: 2px solid #ddd; /* Add a bottom border to header cells */
+    word-break: break-word; /* Prevents long words from overflowing */
+}
+
+/* Style the table body */
+.table tbody td {
+    padding: 10px; /* Padding inside body cells */
+    border-bottom: 1px solid #e1e1e1; /* Light grey border for each row */
+    word-break: break-word; /* Prevents long words from overflowing */
+}
+
+/* Style alternating rows with a background color */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey background for even rows */
+}
+
+/* Style table on smaller screens */
+@media screen and (max-width: 768px) {
+    .table {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+}
