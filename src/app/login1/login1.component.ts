@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 //import { AuthService } from './auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login1',
+  templateUrl: './login1.component.html',
+  styleUrls: ['./login1.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class Login1Component implements OnInit {
   username: string;
   password: string;
 
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //login() {
+  //login1() {
     // Call the AuthService to authenticate the user
    //this.authService.login(this.username, this.password).subscribe(
      // (response) => {

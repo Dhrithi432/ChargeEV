@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  selector: 'app-signup1',
+  templateUrl: './signup1.component.html',
+  styleUrls: ['./signup1.component.scss']
 })
-export class SignupComponent {
+export class Signup1Component {
   fullName: string;
   mobileNumber: string;
   email: string;
